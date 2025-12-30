@@ -50,7 +50,7 @@ void *thread_2_func(void *arg) {
     printf("[Thread 2] 试图获取 锁B...\n");
     pthread_mutex_lock(&mutex_B);
 
-    printf("[Thread 2] 成功获取双锁！任务完成。\n");
+    printf("[Thread 2] 成功获取双锁。\n");
 
     pthread_mutex_unlock(&mutex_B);
     pthread_mutex_unlock(&mutex_A);

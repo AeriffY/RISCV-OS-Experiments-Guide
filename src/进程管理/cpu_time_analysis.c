@@ -38,7 +38,6 @@ void print_times(const char *label, struct tms *start, struct tms *end, clock_t 
     if (self_user_time > 0 || self_sys_time > 0) {
         printf("  [本进程消耗]   User Time : %.2f s | Sys Time : %.2f s\n", self_user_time, self_sys_time);
     }
-    printf("-------------------------------------------------\n");
 }
 
 int main(void) {

@@ -30,7 +30,6 @@ void *increment_task(void *arg) {
 int main(void) {
     pthread_t t1, t2;
 
-    printf("=== 竞态条件测试 ===\n");
     printf("预期结果: %d\n", ITERATIONS * 2);
 
     /* 创建两个并发线程 */
@@ -45,11 +44,8 @@ int main(void) {
     printf("实际结果: %lld\n", counter);
     
     if (counter != ITERATIONS * 2) {
-        printf("[分析] 发生竞态条件！丢失了 %lld 次更新。\n", 
+        printf("发生竞态条件, 丢失了 %lld 次更新。\n", 
                (ITERATIONS * 2) - counter);
-    } else {
-        printf("[分析] 运气极好，未发生冲突 (概率极低)。\n");
-    }
-
+    } 
     return 0;
 }
