@@ -65,8 +65,6 @@ int main(void) {
     pthread_mutex_init(&mutex_A, NULL);
     pthread_mutex_init(&mutex_B, NULL);
 
-    printf("=== 死锁演示程序启动 ===\n");
-
     /* 创建线程 */
     pthread_create(&t1, NULL, thread_1_func, NULL);
     pthread_create(&t2, NULL, thread_2_func, NULL);
